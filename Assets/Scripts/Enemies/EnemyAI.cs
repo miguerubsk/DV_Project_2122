@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour {
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     private void Awake() {
-        player = GameObject.Find("Player").transform;
+        //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour {
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInAttackRange && !playerInSightRange) Patrolling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         //if(playerInAttackRange && playerInSightRange) AttackPlayer();
     }
     private void Patrolling() {
@@ -55,7 +55,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void ChasePlayer() {
-        agent.SetDestination(player.position);
+        agent.SetDestination(player.position/*GameObject.Find("Player").GetComponent("PlayerArmature").transform.position*/);
     }
 
     private void AttackPlayer() {
