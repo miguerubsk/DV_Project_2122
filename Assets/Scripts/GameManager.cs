@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void LateUpdate() {
         if(health <= 0) {
             RestartLevel();
         }
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
             RestartGame();
         }
         if(keyItems == 3) {
-            goal.SetActive(true);
+            goal.GetComponent<CambiarBandera>();
         }
     }
 
@@ -46,6 +46,16 @@ public class GameManager : MonoBehaviour {
         if(currentScore % 100 == 0) {
             lives++;
         }
+    }
+
+    public void AddHealth() {
+        if(health < 3) {
+            health++;
+        } 
+    }
+
+    public void Hurt() {
+        health--;
     }
 
     public void RestartLevel() {
