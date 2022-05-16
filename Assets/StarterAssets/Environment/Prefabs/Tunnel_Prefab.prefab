@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4985949235297978144}
   - component: {fileID: 8456313914433245678}
   - component: {fileID: 1138964657491743937}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tunnel_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
