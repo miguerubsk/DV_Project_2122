@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour {
     private static int health;
     private const int maxHealth = 3;
     private static List<int> levelScores;
+    private int keyItems;
     
     // Start is called before the first frame update
     void Start() {
         currentScore = 0;
+        keyItems = 0;
         if(SceneManager.GetActiveScene().buildIndex == 0) {
             health = 1;
             totalScore = 0;
@@ -31,6 +33,9 @@ public class GameManager : MonoBehaviour {
 
     public void AddScore(int _score) {
         currentScore += _score;
+        if(currentScore % 100 == 0) {
+            lives++;
+        }
     }
 
     public void RestartLevel() {
@@ -43,6 +48,13 @@ public class GameManager : MonoBehaviour {
         levelScores.Add(currentScore);
         totalScore += currentScore;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    public void pickKeyItem() {
+        keyItems++;
+        if(keyItems == 3) {
+            //TODO interface handle
+        }
     }
 
     private void OnDestroy() {
