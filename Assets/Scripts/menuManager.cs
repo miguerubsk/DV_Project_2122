@@ -18,14 +18,12 @@ public class menuManager : MonoBehaviour
         menuPausa.SetActive(false);
         menuInicio.SetActive(false);
         isStarting = isPaused = false;
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Inicio();
-        }
+        
+        Inicio();
             
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && play())
         {
@@ -52,10 +50,15 @@ public class menuManager : MonoBehaviour
 
     public void Inicio()
     {
-        
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         isStarting = true;
         menuInicio.SetActive(true);
+        /*if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+
+        }*/
+        Time.timeScale = 0f;
     }
 
     public void menuPause()
@@ -72,7 +75,7 @@ public class menuManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         menuPausa.SetActive(false);
-        menuInicio.SetActive(false);
+        //menuInicio.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -83,7 +86,7 @@ public class menuManager : MonoBehaviour
 
     public void botonRestart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }

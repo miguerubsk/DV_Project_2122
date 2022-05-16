@@ -786,8 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 669389566}
-  menuInicio: {fileID: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 701847160}
 --- !u!1 &669389566
 GameObject:
   m_ObjectHideFlags: 0
