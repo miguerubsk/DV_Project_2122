@@ -12,22 +12,32 @@ public class GameManager : MonoBehaviour {
     private const int maxHealth = 3;
     private static List<int> levelScores;
     private int keyItems;
+    [SerializeField] GameObject goal;
+    private static bool init = true;
     
     // Start is called before the first frame update
     void Start() {
         currentScore = 0;
         keyItems = 0;
-        if(SceneManager.GetActiveScene().buildIndex == 0) {
+        if(init) {
             health = 1;
             totalScore = 0;
             levelScores = new List<int>();
+            init = false;
         }
+        goal = GameObject.Find("Goal");
     }
 
     // Update is called once per frame
     void Update() {
         if(health <= 0) {
             RestartLevel();
+        }
+        if(lives <= 0) {
+            RestartGame();
+        }
+        if(keyItems == 3) {
+            goal.SetActive(true);
         }
     }
 
@@ -52,14 +62,40 @@ public class GameManager : MonoBehaviour {
 
     public void pickKeyItem() {
         keyItems++;
-        if(keyItems == 3) {
-            //TODO interface handle
-        }
+    }
+
+    public void RestartGame() {
+        init = true;
+        SceneManager.LoadScene(0);
     }
 
     private void OnDestroy() {
         //levelScores.Add(currentScore);
         //totalScore += currentScore;
+    }
+
+    public int GetCurrentScore() {
+        return currentScore;
+    }
+
+    public int GetHealth() {
+        return health;
+    }
+
+    public int GetLives() {
+        return lives;
+    }
+
+    public int GetKeyItems() {
+        return keyItems;
+    }
+
+    public int GetLevelScore(int level) {
+        return levelScores[level];
+    }
+
+    public int GetTotalScore() {
+        return totalScore;
     }
 
 }
