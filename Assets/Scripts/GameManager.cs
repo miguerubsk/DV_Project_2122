@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
             RestartGame();
         }
         if(keyItems == 3) {
-            goal.GetComponent<CambiarBandera>();
+            //goal.GetComponent<CambiarBandera>();
         }
     }
 
