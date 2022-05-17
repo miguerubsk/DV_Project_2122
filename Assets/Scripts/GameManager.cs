@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         keyItems = 0;
         if(init) {
+            lives = 3;
             health = 1;
             totalScore = 0;
             levelScores = new List<int>();
@@ -29,16 +30,10 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate() {
-        if(health <= 0) {
-            RestartLevel();
-        }
-        if(lives <= 0) {
-            RestartGame();
-        }
-        if(keyItems == 3) {
-            goal.GetComponent<CambiarBandera>();
-        }
+    void Update() {
+        
+        
+
     }
 
     public void AddScore(int _score) {
@@ -56,10 +51,16 @@ public class GameManager : MonoBehaviour {
 
     public void Hurt() {
         health--;
+        if (health <= 0) {
+            RestartLevel();
+        }
     }
 
     public void RestartLevel() {
         lives--;
+        if (lives <= 0) {
+            RestartGame();
+        }
         health = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -72,6 +73,10 @@ public class GameManager : MonoBehaviour {
 
     public void pickKeyItem() {
         keyItems++;
+        if (keyItems == 3) {
+            //goal.GetComponent<>();
+            GameObject.Find("Goal").GetComponent<CambioBandera>().cambiaBandera();
+        }
     }
 
     public void RestartGame() {
