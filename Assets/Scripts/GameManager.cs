@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     private const int maxHealth = 3;
     private static List<int> levelScores;
     private int keyItems;
+    private int pointsToLive;
     [SerializeField] GameObject goal;
     private static bool init = true;
     
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         keyItems = 0;
         if(init) {
+            pointsToLive = 0;
+            lives = 3;
             health = 1;
             totalScore = 0;
             levelScores = new List<int>();
@@ -29,26 +32,22 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate() {
-        if(health <= 0) {
-            RestartLevel();
-        }
-        if(lives <= 0) {
-            RestartGame();
-        }
-        if(keyItems == 3) {
-            //goal.GetComponent<CambiarBandera>();
-        }
+    void Update() {
+        
+        
+
     }
 
     public void AddScore(int _score) {
         currentScore += _score;
-        if(currentScore % 100 == 0) {
+        pointsToLive += _score;
+        if(pointsToLive >= 100) {
             lives++;
+            pointsToLive -= 100;
         }
     }
 
-    public void AddHealth() {
+    public void Heal() {
         if(health < 3) {
             health++;
         } 
@@ -56,10 +55,16 @@ public class GameManager : MonoBehaviour {
 
     public void Hurt() {
         health--;
+        if (health <= 0) {
+            RestartLevel();
+        }
     }
 
     public void RestartLevel() {
         lives--;
+        if (lives <= 0) {
+            RestartGame();
+        }
         health = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -72,6 +77,10 @@ public class GameManager : MonoBehaviour {
 
     public void pickKeyItem() {
         keyItems++;
+        if (keyItems == 3) {
+            //goal.GetComponent<>();
+            GameObject.Find("Goal").GetComponent<CambioBandera>().cambiaBandera();
+        }
     }
 
     public void RestartGame() {

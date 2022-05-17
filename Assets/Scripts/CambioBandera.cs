@@ -25,5 +25,6 @@ public class CambioBandera : MonoBehaviour
         flag_victory.SetActive(true);
     }
 
+    
 
 }

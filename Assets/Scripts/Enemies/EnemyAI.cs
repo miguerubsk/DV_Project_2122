@@ -6,8 +6,10 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour {
 
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform player;
+    //[SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
+    [SerializeField] GameObject player;
+    [SerializeField] Collider cubo;
 
     [Header("Patrolling")]
     [SerializeField] Vector3 walkPoint;
@@ -64,7 +66,7 @@ public class EnemyAI : MonoBehaviour {
         agent.SetDestination(transform.position);
 
         //Look at player
-        transform.LookAt(player);
+        transform.LookAt(player.transform);
 
         if (!alreadyAttacked) {
             alreadyAttacked = true;
@@ -86,5 +88,16 @@ public class EnemyAI : MonoBehaviour {
 
     private void ResetAttack() {
         alreadyAttacked = false;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Player???????");
+        if (other.tag == "Player")
+        {
+            Debug.Log("PLAYER");
+            cubo.enabled = false;
+            GameObject.FindObjectOfType<GameManager>().Hurt();
+        }
+
     }
 }
