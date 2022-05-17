@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour {
 
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform player;
+    //[SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
+    [SerializeField] GameObject player;
 
     [Header("Patrolling")]
     [SerializeField] Vector3 walkPoint;
@@ -23,7 +24,7 @@ public class EnemyAI : MonoBehaviour {
     [SerializeField] bool playerInSightRange, playerInAttackRange;
 
     private void Awake() {
-        player = GameObject.Find("Player").transform;
+        //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -39,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInAttackRange && !playerInSightRange) Patrolling();
-        if(playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         //if(playerInAttackRange && playerInSightRange) AttackPlayer();
     }
     private void Patrolling() {
@@ -55,7 +56,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void ChasePlayer() {
-        agent.SetDestination(player.position);
+        agent.SetDestination(GameObject.Find("PlayerArmature").transform.position);
     }
 
     private void AttackPlayer() {
@@ -64,7 +65,7 @@ public class EnemyAI : MonoBehaviour {
         agent.SetDestination(transform.position);
 
         //Look at player
-        transform.LookAt(player);
+        transform.LookAt(player.transform);
 
         if (!alreadyAttacked) {
             alreadyAttacked = true;
@@ -86,5 +87,13 @@ public class EnemyAI : MonoBehaviour {
 
     private void ResetAttack() {
         alreadyAttacked = false;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Player???????");
+        if(other == player/*GameObject.Find("PlayerArmature").gameObject*/) {
+            Debug.Log("PLAYER");
+            GameObject.FindObjectOfType<GameManager>().Hurt();
+        }
     }
 }
