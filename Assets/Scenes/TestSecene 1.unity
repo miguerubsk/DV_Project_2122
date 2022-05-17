@@ -158,13 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 161744673}
-  player: {fileID: 959304267}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
+  player: {fileID: 959304267}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
@@ -181,7 +181,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 161744670}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.70708877
   m_Height: 2.096126
   m_Direction: 1

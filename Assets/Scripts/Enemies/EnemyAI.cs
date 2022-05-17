@@ -91,7 +91,7 @@ public class EnemyAI : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Player???????");
-        if(other == player/*GameObject.Find("PlayerArmature").gameObject*/) {
+        if(other.tag == "Player"/*GameObject.Find("PlayerArmature").gameObject*/) {
             Debug.Log("PLAYER");
             GameObject.FindObjectOfType<GameManager>().Hurt();
         }

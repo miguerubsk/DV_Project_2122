@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void AddHealth() {
+    public void Heal() {
         if(health < 3) {
             health++;
         } 
