@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour {
 
-    public GameManager gameManager;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] GameObject pickupEffect;
+    [SerializeField] AudioClip m_pickSound = null;
     // Start is called before the first frame update
     void Start() {
         gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -17,6 +19,8 @@ public class PickUp : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
+            Instantiate(pickupEffect, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(m_pickSound, this.transform.position, 1);
             gameManager.pickKeyItem();
             gameManager.AddScore(20);
             gameManager.Heal();

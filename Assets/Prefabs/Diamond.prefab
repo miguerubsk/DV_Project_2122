@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2653016958857823099}
   - component: {fileID: 2653016958858835421}
   - component: {fileID: 2653016958854517753}
+  - component: {fileID: 5005463372393689408}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2653016958860786049}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.0000031411714, y: 156.27011, z: -2.412621e-16}
 --- !u!33 &2653016958857823099
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96,6 +97,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 309db8db017484e308a6de0a8e64c11a, type: 3}
+--- !u!95 &5005463372393689408
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653016958860799387}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 498bae12b37287545a7e646dda44d885, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2653016958860813729
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,3 +192,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  pickupEffect: {fileID: 6383053610229786125, guid: 78ce40378ccd408418661b4d92468308, type: 3}
+  m_pickSound: {fileID: 8300000, guid: 0447ad6969c79dc4688b79cc2c2da575, type: 3}

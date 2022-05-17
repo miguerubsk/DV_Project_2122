@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     private const int maxHealth = 3;
     private static List<int> levelScores;
     private int keyItems;
+    private int pointsToLive;
     [SerializeField] GameObject goal;
     private static bool init = true;
     
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour {
         currentScore = 0;
         keyItems = 0;
         if(init) {
+            pointsToLive = 0;
             lives = 3;
             health = 1;
             totalScore = 0;
@@ -38,8 +40,10 @@ public class GameManager : MonoBehaviour {
 
     public void AddScore(int _score) {
         currentScore += _score;
-        if(currentScore % 100 == 0) {
+        pointsToLive += _score;
+        if(pointsToLive >= 100) {
             lives++;
+            pointsToLive -= 100;
         }
     }
 

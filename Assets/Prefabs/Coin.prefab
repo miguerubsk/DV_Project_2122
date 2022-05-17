@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f22c27516f1cc48aafa2193ec35ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 5896997450033728737, guid: 99860e41da74b044f905fca47b789152, type: 3}
+  m_pickSound: {fileID: 8300000, guid: 567e46cabeae671489ed717e8ccb8c14, type: 3}
 --- !u!1001 &4582347299384413403
 PrefabInstance:
   m_ObjectHideFlags: 0
