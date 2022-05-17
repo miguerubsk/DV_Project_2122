@@ -5,11 +5,10 @@ using UnityEngine;
 public class Victory : MonoBehaviour
 {
 
-    public GameObject player;
+     GameObject player;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        player = GameObject.Find("PlayerArmature");
     }
 
     // Update is called once per frame
