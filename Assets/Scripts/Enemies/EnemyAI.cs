@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour {
     //[SerializeField] Transform player;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] GameObject player;
+    [SerializeField] Collider cubo;
 
     [Header("Patrolling")]
     [SerializeField] Vector3 walkPoint;
@@ -91,9 +92,12 @@ public class EnemyAI : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Player???????");
-        if(other == player/*GameObject.Find("PlayerArmature").gameObject*/) {
+        if (other.tag == "Player")
+        {
             Debug.Log("PLAYER");
+            cubo.enabled = false;
             GameObject.FindObjectOfType<GameManager>().Hurt();
         }
+
     }
 }
