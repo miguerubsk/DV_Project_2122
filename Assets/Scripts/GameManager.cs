@@ -88,9 +88,10 @@ public class GameManager : MonoBehaviour {
         lives--;
         if (lives <= 0) {
             RestartGame();
+        } else {
+            health = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        health = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel() {
