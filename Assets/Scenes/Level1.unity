@@ -14155,7 +14155,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 667467570}
         m_TargetAssemblyTypeName: InterfaceManager, Assembly-CSharp
-        m_MethodName: botonResume
+        m_MethodName: botonRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
