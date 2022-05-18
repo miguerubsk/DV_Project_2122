@@ -321,6 +321,7 @@ MonoBehaviour:
     m_Bits: 128
   player: {fileID: 4104267104142095475, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
   cubo: {fileID: 5122100356000664859}
+  oofSound: {fileID: 8300000, guid: 413fdc32f3b762c4687ca2b6a70b91bb, type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
