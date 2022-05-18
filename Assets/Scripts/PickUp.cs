@@ -23,7 +23,7 @@ public class PickUp : MonoBehaviour {
             AudioSource.PlayClipAtPoint(m_pickSound, this.transform.position, 1);
             gameManager.pickKeyItem();
             gameManager.AddScore(20);
-            gameManager.HealPlayer();
+            //gameManager.HealPlayer();
             Destroy(effect, 3);
             GameObject.Destroy(gameObject);
         }

@@ -92,14 +92,17 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Player???????");
-        if (other.tag == "Player")
-        {
-            Debug.Log("PLAYER");
+        if (other.tag == "Player") {
             cubo.enabled = false;
             GameObject.FindObjectOfType<GameManager>().HurtPlayer();
             AudioSource.PlayClipAtPoint(oofSound, transform.position, 1);
         }
 
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") {
+            cubo.enabled = true;
+        }
     }
 }
