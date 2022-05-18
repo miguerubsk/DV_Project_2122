@@ -16,7 +16,7 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI vitalidad;
     [SerializeField] TextMeshProUGUI puntos;
     [SerializeField] TextMeshProUGUI puntosFW;
-    [SerializeField] TextMeshProUGUI puntosF;
+    //[SerializeField] TextMeshProUGUI puntosF;
     [SerializeField] TextMeshProUGUI tiempo;
     [SerializeField] TextMeshProUGUI objetos;
     [SerializeField] TextMeshProUGUI nivel;
