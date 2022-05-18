@@ -119,7 +119,7 @@ public class InterfaceManager : MonoBehaviour
         menuInicio.SetActive(true);
         Time.timeScale = 0f;
 
-        nivel.text = "Nivel: " + SceneManager.GetActiveScene().name;
+        nivel.text = "Nivel " + SceneManager.GetActiveScene().buildIndex;
         
 
     }
