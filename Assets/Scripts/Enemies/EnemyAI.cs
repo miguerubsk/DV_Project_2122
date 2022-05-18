@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour {
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] GameObject player;
     [SerializeField] Collider cubo;
+    [SerializeField] AudioClip oofSound;
 
     [Header("Patrolling")]
     [SerializeField] Vector3 walkPoint;
@@ -97,6 +98,7 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("PLAYER");
             cubo.enabled = false;
             GameObject.FindObjectOfType<GameManager>().HurtPlayer();
+            AudioSource.PlayClipAtPoint(oofSound, transform.position, 1);
         }
 
     }
