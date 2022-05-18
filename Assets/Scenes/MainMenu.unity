@@ -202,8 +202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00034575, y: -115}
-  m_SizeDelta: {x: 176.63, y: 50.1142}
+  m_AnchoredPosition: {x: -0.00072674, y: -122.981}
+  m_SizeDelta: {x: 241.93, y: 66.0763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217884041
 MonoBehaviour:
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 213611123}
-        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
+      - m_Target: {fileID: 1288431318}
+        m_TargetAssemblyTypeName: MenuEntrada, Assembly-CSharp
         m_MethodName: botonQuit
         m_Mode: 1
         m_Arguments:
@@ -333,8 +333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00033569, y: 69}
-  m_SizeDelta: {x: 377.0556, y: 104.4831}
+  m_AnchoredPosition: {x: -0.00033569, y: 107}
+  m_SizeDelta: {x: 496.0449, y: 111.7385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292473433
 MonoBehaviour:
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d21beb6a395085448f846ed1d9a8712, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a810741d7f68bd49aeb02e7aa53212a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -37}
-  m_SizeDelta: {x: 176.6293, y: 50.1143}
+  m_AnchoredPosition: {x: -0.00032806, y: -21}
+  m_SizeDelta: {x: 241.9283, y: 67.5274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418884059
 MonoBehaviour:
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 213611123}
-        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
+      - m_Target: {fileID: 1288431318}
+        m_TargetAssemblyTypeName: MenuEntrada, Assembly-CSharp
         m_MethodName: botonStart
         m_Mode: 1
         m_Arguments:
@@ -616,8 +616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 178, y: 50}
+  m_AnchoredPosition: {x: -0.34266, y: -0.028572}
+  m_SizeDelta: {x: 177.31, y: 50.057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761873795
 MonoBehaviour:
@@ -652,7 +652,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: START
+  m_Text: START GAME
 --- !u!222 &761873796
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 1288431316}
   - component: {fileID: 1288431315}
   - component: {fileID: 1288431314}
+  - component: {fileID: 1288431318}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -843,6 +844,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1288431318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288431313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f446133b762e3814b9de36f469e01ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1869412795
 GameObject:
   m_ObjectHideFlags: 0
