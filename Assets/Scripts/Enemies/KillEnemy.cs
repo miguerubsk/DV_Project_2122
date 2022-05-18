@@ -26,6 +26,7 @@ public class KillEnemy : MonoBehaviour
     {
         colliderPadre.enabled = false;
         padre.transform.localScale -= new Vector3(0, (float)0.3, 0);
+        GameObject.FindObjectOfType<GameManager>().AddScore(30);
         AudioSource.PlayClipAtPoint(killSound, transform.position, 1);
         Destroy(padre,1);
 
