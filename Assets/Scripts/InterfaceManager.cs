@@ -36,10 +36,14 @@ public class InterfaceManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         gameManager = GameObject.FindObjectOfType<GameManager>();
         inicia = pausa = ganar = false;
-        panelInicio();
+        
         if (SceneManager.GetActiveScene().name == "Puntuaciones")
         {
             panelWin();
+        }
+        else
+        {
+            panelInicio();
         }
     }
 
@@ -141,9 +145,9 @@ public class InterfaceManager : MonoBehaviour
         
         Time.timeScale = 0f;
 
-        puntosFW.text = "Nivel 1 " + gameManager.GetLevelScore(1);
-        puntosFW.text = "Nivel 2 " + gameManager.GetLevelScore(2);
-        puntosFW.text = "Nivel 3 " + gameManager.GetLevelScore(3);
+        puntosFW.text = "Nivel 1: " + gameManager.GetLevelScore(1);
+        puntosFW.text = "Nivel 2: " + gameManager.GetLevelScore(2);
+        puntosFW.text = "Nivel 3: " + gameManager.GetLevelScore(3);
     }
 
     public void panelGameOver()

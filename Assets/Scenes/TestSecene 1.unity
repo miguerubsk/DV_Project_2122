@@ -935,7 +935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &337250599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  playerRenderer: {fileID: 0}
+  playerRenderer: {fileID: 706903466}
 --- !u!4 &701847161
 Transform:
   m_ObjectHideFlags: 0
@@ -1922,6 +1922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb28b3be2fef3741ba83368ae4522a5, type: 3}
+--- !u!137 &706903466 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8455992394689343471, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
+  m_PrefabInstance: {fileID: 4104267104026632803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731231463
 GameObject:
   m_ObjectHideFlags: 0
