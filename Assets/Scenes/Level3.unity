@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 76215169}
   - component: {fileID: 76215168}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  playerRenderer: {fileID: 1625819393}
 --- !u!4 &76215169
 Transform:
   m_ObjectHideFlags: 0
@@ -6399,6 +6400,11 @@ PrefabInstance:
 --- !u!1 &1625819392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 412461932391753243, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
+  m_PrefabInstance: {fileID: 1625819391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1625819393 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8455992394689343471, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
   m_PrefabInstance: {fileID: 1625819391}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1639246800

@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  playerRenderer: {fileID: 1625819392}
 --- !u!4 &122289300
 Transform:
   m_ObjectHideFlags: 0
@@ -10962,6 +10963,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
+--- !u!137 &1625819392 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8455992394689343471, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
+  m_PrefabInstance: {fileID: 1625819391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630526744
 GameObject:
   m_ObjectHideFlags: 0
