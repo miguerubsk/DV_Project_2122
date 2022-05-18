@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aa32a3baebd664f89615909206348a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  victorySound: {fileID: 8300000, guid: 8c2581a9a0367eb43a71032b5c6d2cd5, type: 3}
 --- !u!1 &4396146824572576005
 GameObject:
   m_ObjectHideFlags: 0

@@ -193,4 +193,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   pickupEffect: {fileID: 6383053610229786125, guid: 78ce40378ccd408418661b4d92468308, type: 3}
-  m_pickSound: {fileID: 8300000, guid: 0447ad6969c79dc4688b79cc2c2da575, type: 3}
+  m_pickSound: {fileID: 8300000, guid: 1642dd4098d6b544babf98698c96fdce, type: 3}
