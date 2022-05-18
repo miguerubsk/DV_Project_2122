@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Size: {x: 2, y: 0.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5809476720597254065
 MonoBehaviour:
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   padre: {fileID: 6900503222006054845}
   colliderPadre: {fileID: 3901855670563202866}
+  killSound: {fileID: 8300000, guid: 33bd47aeb915a8a4fbdc84793c184753, type: 3}
 --- !u!1 &6479843690261459158
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +122,6 @@ GameObject:
   - component: {fileID: 3748555968531152852}
   - component: {fileID: 6708389569250653744}
   - component: {fileID: 5935039944966204514}
-  - component: {fileID: 9187168891839782392}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -192,20 +192,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9187168891839782392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6479843690261459158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d93bcc4bc0078074ebe7677e951a41a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  padre: {fileID: 0}
-  colliderPadre: {fileID: 0}
 --- !u!1 &6900503222006054845
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +206,6 @@ GameObject:
   - component: {fileID: 6900503222006054786}
   - component: {fileID: 6900503222006054844}
   - component: {fileID: 3901855670563202866}
-  - component: {fileID: 523211349377699783}
   m_Layer: 0
   m_Name: Amogus
   m_TagString: Untagged
@@ -334,7 +319,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  player: {fileID: 0}
+  player: {fileID: 4104267104142095475, guid: f372200f0a67f7345ab825aef0a7ac42, type: 3}
   cubo: {fileID: 5122100356000664859}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
@@ -354,21 +339,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 3}
+  m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &523211349377699783
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6900503222006054845}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

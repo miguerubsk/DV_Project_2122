@@ -7,15 +7,15 @@ public class GameManager : MonoBehaviour {
 
     private static int totalScore;
     private int currentScore;
-    private static int lives;
-    private static int health;
+    private static int lives, health;
     private const int maxHealth = 3;
     private static List<int> levelScores;
-    private int keyItems;
-    private int pointsToLive;
+    private int keyItems, pointsToLive;
     [SerializeField] GameObject goal;
     private static bool init = true;
-    
+    private float invincibilityCounter, flashCounter, flashTime = 0.1f, invincibilityTime = 1;
+    [SerializeField] Renderer playerRenderer;
+
     // Start is called before the first frame update
     void Start() {
         currentScore = 0;
@@ -29,12 +29,28 @@ public class GameManager : MonoBehaviour {
             init = false;
         }
         goal = GameObject.Find("Goal");
+        //playerRenderer = GameObject.Find("PlayerArmature");
     }
 
     // Update is called once per frame
     void Update() {
         
-        
+        if (invincibilityCounter > 0) {
+            invincibilityCounter -= Time.deltaTime;
+            flashCounter -= Time.deltaTime;
+            if (flashCounter <= 0) {
+                playerRenderer.enabled = !playerRenderer.enabled;
+
+            }
+            if (invincibilityCounter <= 0) {
+                playerRenderer.enabled = true;
+            }
+        }
+
+        if (pointsToLive >= 100) {
+            lives++;
+            pointsToLive -= 100;
+        }
 
     }
 
@@ -47,16 +63,24 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void Heal() {
+    public void HealPlayer() {
         if(health < 3) {
             health++;
-        } 
+        } else {
+            AddScore(50);
+        }
     }
 
-    public void Hurt() {
-        health--;
-        if (health <= 0) {
-            RestartLevel();
+    public void HurtPlayer() {
+        if (invincibilityCounter <= 0) {
+            health--;
+            if (health <= 0) {
+                RestartLevel();
+            } else {
+                invincibilityCounter = invincibilityTime;
+                playerRenderer.enabled = false;
+                flashCounter = flashTime;
+            }
         }
     }
 
@@ -110,7 +134,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public int GetLevelScore(int level) {
-        return levelScores[level];
+        return levelScores[level-1];
     }
 
     public int GetTotalScore() {

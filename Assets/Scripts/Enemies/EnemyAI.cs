@@ -96,7 +96,7 @@ public class EnemyAI : MonoBehaviour {
         {
             Debug.Log("PLAYER");
             cubo.enabled = false;
-            GameObject.FindObjectOfType<GameManager>().Hurt();
+            GameObject.FindObjectOfType<GameManager>().HurtPlayer();
         }
 
     }

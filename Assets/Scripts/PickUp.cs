@@ -19,11 +19,12 @@ public class PickUp : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
-            Instantiate(pickupEffect, transform.position, transform.rotation);
+            GameObject effect = Instantiate(pickupEffect, transform.position, transform.rotation);
             AudioSource.PlayClipAtPoint(m_pickSound, this.transform.position, 1);
             gameManager.pickKeyItem();
             gameManager.AddScore(20);
-            gameManager.Heal();
+            gameManager.HealPlayer();
+            Destroy(effect, 3);
             GameObject.Destroy(gameObject);
         }
     }
