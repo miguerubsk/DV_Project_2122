@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(Input.GetKeyUp(KeyCode.F1)) {
+        if(Input.GetKeyDown(KeyCode.F1) && Input.GetKeyDown(KeyCode.CapsLock)) {
             SceneManager.LoadScene("TestScene1");
         }
         if (invincibilityCounter > 0) {
