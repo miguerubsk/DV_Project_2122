@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public int GetLevelScore(int level) {
-        return levelScores[level];
+        return levelScores[level-1];
     }
 
     public int GetTotalScore() {
