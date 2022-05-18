@@ -9,13 +9,15 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] GameObject menuInicio;
     [SerializeField] GameObject menuPausa;
     [SerializeField] GameObject menuWin;
-    [SerializeField] GameObject menuGameOver;
+    //[SerializeField] GameObject menuGameOver;
     [SerializeField] GameObject HUD;
     GameManager gameManager;
     [SerializeField] TextMeshProUGUI vidas;
     [SerializeField] TextMeshProUGUI vitalidad;
     [SerializeField] TextMeshProUGUI puntos;
     [SerializeField] TextMeshProUGUI puntosFW;
+    [SerializeField] TextMeshProUGUI puntosFW1;
+    [SerializeField] TextMeshProUGUI puntosFW2;
     //[SerializeField] TextMeshProUGUI puntosF;
     [SerializeField] TextMeshProUGUI tiempo;
     [SerializeField] TextMeshProUGUI objetos;
@@ -30,7 +32,7 @@ public class InterfaceManager : MonoBehaviour
         menuInicio.SetActive(false);
         menuPausa.SetActive(false);
         menuWin.SetActive(false);
-        menuGameOver.SetActive(false);
+        //menuGameOver.SetActive(false);
         HUD.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -59,7 +61,7 @@ public class InterfaceManager : MonoBehaviour
         
         
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && play())
         {
             if(pausa)
             {
@@ -107,7 +109,7 @@ public class InterfaceManager : MonoBehaviour
 
     public static bool play()
     {
-        return !inicia && !pausa;
+        return !inicia && !pausa && !ganar;
     }
 
     public void panelInicio()
@@ -146,11 +148,11 @@ public class InterfaceManager : MonoBehaviour
         Time.timeScale = 0f;
 
         puntosFW.text = "Nivel 1: " + gameManager.GetLevelScore(1);
-        puntosFW.text = "Nivel 2: " + gameManager.GetLevelScore(2);
-        puntosFW.text = "Nivel 3: " + gameManager.GetLevelScore(3);
+        puntosFW1.text = "Nivel 2: " + gameManager.GetLevelScore(2);
+        puntosFW2.text = "Nivel 3: " + gameManager.GetLevelScore(3);
     }
 
-    public void panelGameOver()
+    /*public void panelGameOver()
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -160,6 +162,6 @@ public class InterfaceManager : MonoBehaviour
         Time.timeScale = 0f;
 
 
-    }
+    }*/
 
 }
