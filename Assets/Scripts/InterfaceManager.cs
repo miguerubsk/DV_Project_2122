@@ -9,14 +9,18 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] GameObject menuInicio;
     [SerializeField] GameObject menuPausa;
     [SerializeField] GameObject menuWin;
+    [SerializeField] GameObject menuGameOver;
     [SerializeField] GameObject HUD;
     GameManager gameManager;
     [SerializeField] TextMeshProUGUI vidas;
     [SerializeField] TextMeshProUGUI vitalidad;
     [SerializeField] TextMeshProUGUI puntos;
+    [SerializeField] TextMeshProUGUI puntosFW;
+    [SerializeField] TextMeshProUGUI puntosF;
     [SerializeField] TextMeshProUGUI tiempo;
     [SerializeField] TextMeshProUGUI objetos;
     [SerializeField] TextMeshProUGUI nivel;
+
 
     public static bool inicia, pausa, ganar;
 
@@ -26,12 +30,17 @@ public class InterfaceManager : MonoBehaviour
         menuInicio.SetActive(false);
         menuPausa.SetActive(false);
         menuWin.SetActive(false);
+        menuGameOver.SetActive(false);
         HUD.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         gameManager = GameObject.FindObjectOfType<GameManager>();
         inicia = pausa = ganar = false;
         panelInicio();
+        if (SceneManager.GetActiveScene().name == "Puntuaciones")
+        {
+            panelWin();
+        }
     }
 
     // Update is called once per frame
@@ -106,7 +115,7 @@ public class InterfaceManager : MonoBehaviour
         menuInicio.SetActive(true);
         Time.timeScale = 0f;
 
-        nivel.text = "Nivel: " + SceneManager.GetActiveScene();
+        nivel.text = "Nivel: " + SceneManager.GetActiveScene().name;
         
 
     }
@@ -131,6 +140,22 @@ public class InterfaceManager : MonoBehaviour
         ganar = true;
         
         Time.timeScale = 0f;
+
+        puntosFW.text = "Nivel 1 " + gameManager.GetLevelScore(1);
+        puntosFW.text = "Nivel 2 " + gameManager.GetLevelScore(2);
+        puntosFW.text = "Nivel 3 " + gameManager.GetLevelScore(3);
+    }
+
+    public void panelGameOver()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        menuGameOver.SetActive(true);
+
+        //puntosF.text = "Puntuación: " + gameManager.GetCurrentScore();
+        Time.timeScale = 0f;
+
+
     }
 
 }
