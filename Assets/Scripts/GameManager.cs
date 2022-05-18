@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
     private int keyItems, pointsToLive;
     [SerializeField] GameObject goal;
     private static bool init = true;
-    private float invincibilityCounter, flashCounter;
+    private float invincibilityCounter, flashCounter, flashTime = 0.1f, invincibilityTime = 1;
     [SerializeField] Renderer playerRenderer;
 
     // Start is called before the first frame update
@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        if (pointsToLive >= 100) {
+            lives++;
+            pointsToLive -= 100;
+        }
+
     }
 
     public void AddScore(int _score) {
@@ -61,13 +66,21 @@ public class GameManager : MonoBehaviour {
     public void HealPlayer() {
         if(health < 3) {
             health++;
-        } 
+        } else {
+            AddScore(50);
+        }
     }
 
     public void HurtPlayer() {
-        health--;
-        if (health <= 0) {
-            RestartLevel();
+        if (invincibilityCounter <= 0) {
+            health--;
+            if (health <= 0) {
+                RestartLevel();
+            } else {
+                invincibilityCounter = invincibilityTime;
+                playerRenderer.enabled = false;
+                flashCounter = flashTime;
+            }
         }
     }
 
