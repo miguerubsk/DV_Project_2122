@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+        if(Input.GetKeyUp(KeyCode.F1)) {
+            SceneManager.LoadScene("TestScene1");
+        }
         if (invincibilityCounter > 0) {
             invincibilityCounter -= Time.deltaTime;
             flashCounter -= Time.deltaTime;

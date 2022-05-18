@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Victory : MonoBehaviour
-{
+public class Victory : MonoBehaviour {
+
 
      GameObject player;
     // Start is called before the first frame update
@@ -19,7 +20,12 @@ public class Victory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == player) {
-            GameObject.FindObjectOfType<GameManager>().NextLevel();
+            if(SceneManager.GetActiveScene().name == "TestScene1") {
+                SceneManager.LoadScene(0);
+            } else { 
+                GameObject.FindObjectOfType<GameManager>().NextLevel();
+            }
+            
         }
     }
 }
