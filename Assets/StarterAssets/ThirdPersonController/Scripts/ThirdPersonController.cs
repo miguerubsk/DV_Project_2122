@@ -87,8 +87,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
-        private bool _doubleJumped = false;
-        private int _jumpsRemainings = 2;
+        private float knockbackCounter, knockBackForce = 15, knockBackTime = 0.5f;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -246,6 +245,7 @@ namespace StarterAssets
             }
 
 
+
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
@@ -343,6 +343,11 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f) {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+        public void KnockBack(Vector3 direction) {
+            knockbackCounter = knockBackTime;
+            Vector3 moveDirection = direction * knockBackForce;
+            moveDirection.y = knockBackForce;
         }
     }
 }

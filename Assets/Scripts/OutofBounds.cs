@@ -18,6 +18,6 @@ public class OutofBounds : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        GameObject.FindObjectOfType<GameManager>().Hurt();
+        GameObject.FindObjectOfType<GameManager>().HurtPlayer();
     }
 }
